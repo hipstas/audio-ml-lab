@@ -112,7 +112,7 @@ RUN add-apt-repository -y ppa:mc3man/trusty-media \
 # Configure container startup
 ENV SHELL /bin/bash
 WORKDIR /home/sharedfolder
-CMD cd /home/sharedfolder/ && wget -nc https://github.com/hipstas/audio-tagging-toolkit/blob/master/scripts/Classify_and_Play.zip?raw=true -O Classify_and_Play.zip
+#CMD cd /home/sharedfolder/ && wget -nc https://github.com/hipstas/audio-tagging-toolkit/blob/master/scripts/Classify_and_Play.zip?raw=true -O Classify_and_Play.zip
 CMD jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=1.0e10 --NotebookApp.token=''
 
 # Launch container and open notebook like so:
