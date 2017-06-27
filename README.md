@@ -9,4 +9,4 @@ docker run -it --name audio_ml_lab -d -p 8888:8888 -v ~/Desktop/sharedfolder:/ho
 
 ```
 
-Enter `http://localhost:8888` in your browser's URL bar to launch Jupyter.
+When the commands above finished running, point your browser to `http://localhost:8888` in to launch the Jupyter interface.
