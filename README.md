@@ -1,6 +1,6 @@
 # Audio ML Lab
 
-Enter the following three commands in the terminal to kill an existing Audio ML Lab container (if applicable), then download and run the latest version of this container.
+Enter the following three commands in the terminal to kill an existing Audio ML Lab container (if applicable), then download and run the latest version of this Docker container.
 
 ```
 docker rm -f audio_ml_lab
