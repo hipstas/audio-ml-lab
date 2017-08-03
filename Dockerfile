@@ -7,6 +7,11 @@ MAINTAINER Steve McLaughlin <stephen.mclaughlin@utexas.edu>
 EXPOSE 8888
 ENV PYTHONWARNINGS="ignore:a true SSLContext object"
 
+# Install FFmpeg with mp3 support
+RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
+&& apt -y update \
+&& apt install -y ffmpeg libav-tools x264 x265
+
 # Install dependencies
 RUN apt-get update && apt-get install -y \
  wget \
@@ -81,6 +86,11 @@ RUN apt-get update && apt-get install -y \
  tornado \
  pathlib \
  tflearn \
+ keras \
+ h5py \
+ tensorflow>=1.0.0 \
+ google-api-python-client \
+ Pillow \
  scikits.talkbox \
  scikits.audiolab \
  git+git://github.com/hipstas/audio-tagging-toolkit.git \
@@ -104,10 +114,6 @@ RUN apt-get update && apt-get install -y \
 # && cd /home/sharedfolder \
 # && rm -rf marsyas
 
-# Install FFmpeg with mp3 support
-RUN add-apt-repository -y ppa:mc3man/trusty-media \
- && apt-get update -y \
- && apt-get install -y ffmpeg gstreamer0.10-ffmpeg
 
 # Configure container startup
 ENV SHELL /bin/bash
