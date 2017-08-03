@@ -7,11 +7,6 @@ MAINTAINER Steve McLaughlin <stephen.mclaughlin@utexas.edu>
 EXPOSE 8888
 ENV PYTHONWARNINGS="ignore:a true SSLContext object"
 
-# Install FFmpeg with mp3 support
-RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
-&& apt -y update \
-&& apt install -y ffmpeg libav-tools x264 x265
-
 # Install dependencies
 RUN apt-get update && apt-get install -y \
  wget \
@@ -101,6 +96,11 @@ RUN apt-get update && apt-get install -y \
  && ./waf install \
  && cd ../ \
  && rm -rf essentia
+
+# Install FFmpeg with mp3 support
+RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
+&& apt -y update \
+&& apt install -y ffmpeg libav-tools x264 x265
 
 # Omitting Marsyas for now:
 #
