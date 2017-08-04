@@ -4,7 +4,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Steve McLaughlin <stephen.mclaughlin@utexas.edu>
 
-EXPOSE 8888
+EXPOSE 8887
 ENV PYTHONWARNINGS="ignore:a true SSLContext object"
 
 # Install dependencies
@@ -124,4 +124,4 @@ CMD jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.iopub_
 
 # Launch container and open notebook like so:
 # docker pull hipstas/audio-ml-lab
-# docker run -it --name audio_ml_lab -p 8888:8888 -v ~/Desktop/sharedfolder:/sharedfolder hipstas/audio-ml-lab
+# docker run -it --name audio_ml_lab -p 8887:8887 -v ~/Desktop/sharedfolder:/sharedfolder hipstas/audio-ml-lab
