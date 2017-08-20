@@ -70,6 +70,7 @@ RUN apt-get update && apt-get install -y \
  jupyter \
  pandas \
  matplotlib \
+ plotly \
  scipy \
  sklearn \
  librosa \
