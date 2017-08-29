@@ -115,7 +115,6 @@ RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
 # && cd /sharedfolder \
 # && rm -rf marsyas
 
-
 # Configure container startup
 ENV SHELL /bin/bash
 WORKDIR /sharedfolder
