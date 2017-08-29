@@ -99,9 +99,9 @@ RUN apt-get update && apt-get install -y \
  && rm -rf essentia
 
 # Install FFmpeg with mp3 support
-RUN add-apt-repository ppa:jonathonf/ffmpeg \
-&& apt -y update \
-&& apt install -y ffmpeg libav-tools x264 x265
+RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
+&& apt-get -y update \
+&& apt-get install -y ffmpeg libav-tools x264 x265
 
 # Omitting Marsyas for now:
 #
