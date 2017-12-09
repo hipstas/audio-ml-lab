@@ -104,8 +104,7 @@ RUN add-apt-repository ppa:jonathonf/ffmpeg \
 && apt-get install -y ffmpeg libav-tools x264 x265
 
 # Omitting Marsyas for now:
-#
-# && git clone https://github.com/marsyas/marsyas.git \
+# git clone https://github.com/marsyas/marsyas.git \
 # && cd marsyas \
 # && mkdir build \
 # &&  cd build \
