@@ -1,5 +1,4 @@
 # Audio ML Notebook
-
 FROM ubuntu:14.04
 
 MAINTAINER Steve McLaughlin <stephen.mclaughlin@utexas.edu>
@@ -114,6 +113,12 @@ RUN add-apt-repository ppa:jonathonf/ffmpeg \
 # && make install \
 # && cd /sharedfolder \
 # && rm -rf marsyas
+
+## Setting UTF-8 as default encoding format for terminal
+RUN apt-get install -y language-pack-en
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Configure container startup
 ENV SHELL /bin/bash
