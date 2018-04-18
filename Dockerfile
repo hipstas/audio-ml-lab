@@ -88,14 +88,15 @@ RUN apt-get update && apt-get install -y \
  Pillow \
  scikits.talkbox \
  scikits.audiolab \
- git+git://github.com/hipstas/audio-tagging-toolkit.git \
- && git clone https://github.com/MTG/essentia.git \
- && cd essentia \
- && ./waf configure --mode=release --build-static --with-python --with-cpptests --with-examples --with-vamp \
- && ./waf \
- && ./waf install \
- && cd ../ \
- && rm -rf essentia
+ git+git://github.com/hipstas/audio-tagging-toolkit.git
+
+# && git clone https://github.com/MTG/essentia.git \
+# && cd essentia \
+# && ./waf configure --mode=release --build-static --with-python --with-cpptests --with-examples --with-vamp \
+# && ./waf \
+# && ./waf install \
+# && cd ../ \
+# && rm -rf essentia
 
 # Install FFmpeg with mp3 support
 RUN add-apt-repository ppa:jonathonf/ffmpeg \
