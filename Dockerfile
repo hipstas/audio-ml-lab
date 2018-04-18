@@ -103,8 +103,7 @@ RUN add-apt-repository ppa:jonathonf/ffmpeg \
 && apt-get install -y ffmpeg libav-tools x264 x265
 
 # Omitting Marsyas for now:
-#
-# && git clone https://github.com/marsyas/marsyas.git \
+# git clone https://github.com/marsyas/marsyas.git \
 # && cd marsyas \
 # && mkdir build \
 # &&  cd build \
@@ -125,7 +124,6 @@ ENV SHELL /bin/bash
 WORKDIR /sharedfolder
 #CMD cd /sharedfolder/ && wget -nc https://github.com/hipstas/audio-tagging-toolkit/blob/master/scripts/Classify_and_Play.zip?raw=true -O Classify_and_Play.zip
 CMD jupyter notebook --ip 0.0.0.0 --port 8887 --no-browser --allow-root --NotebookApp.iopub_data_rate_limit=1.0e10 --NotebookApp.token=''
-
 
 # Launch container and open notebook like so:
 # docker pull hipstas/audio-ml-lab
