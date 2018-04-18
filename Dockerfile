@@ -21,7 +21,6 @@ RUN apt-get update && apt-get install -y \
  libsox-fmt-mp3 \
  libimage-exiftool-perl \
  python2.7 \
- python-pip \
  python-dev \
  libffi-dev \
  libssl-dev \
@@ -54,7 +53,8 @@ RUN apt-get update && apt-get install -y \
  libasound2-dev \
  libsndfile1-dev \
  praat \
- && python -m pip install -U pip \
+ python-setuptools \
+ && sudo easy_install -U pip \
  && pip install -U \
  setuptools \
  pyOpenSSL \
