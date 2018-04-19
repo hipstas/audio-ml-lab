@@ -1,3 +1,4 @@
+'requests[security]'
 setuptools
 nose
 pyOpenSSL
@@ -18,7 +19,6 @@ sklearn
 librosa
 aubio
 moviepy
-pyAudioAnalysis
 pocketsphinx
 speechrecognition
 tornado
@@ -32,3 +32,4 @@ Pillow
 scikits.talkbox
 scikits.audiolab
 git+git://github.com/hipstas/audio-tagging-toolkit.git
+#pyAudioAnalysis
