@@ -53,7 +53,7 @@ RUN apt-get update && apt-get install -y \
  libasound2-dev \
  libsndfile1-dev \
  praat \
- python-setuptools
+ python-setuptools \
 && easy_install -U pip \
 && pip install -U \
 setuptools \
