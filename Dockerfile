@@ -45,52 +45,44 @@ RUN apt-get update && apt-get install -y \
  libavresample-dev \
  libsamplerate0-dev \
  libtag1-dev \
- python-numpy-dev \
- python-numpy \
- python-yaml \
  cmake \
  libjack-dev \
  libasound2-dev \
  libsndfile1-dev \
- praat \
- python-setuptools \
-&& easy_install -U pip \
-&& pip install -U \
-setuptools \
-nose \
-pyOpenSSL \
-ndg-httpsclient \
- pyasn1 \
- requests \
- unicodecsv \
- youtube-dl \
- six \
- pydub \
- numpy \
- jupyter \
- pandas \
- matplotlib \
- plotly \
- scipy \
- sklearn \
- librosa \
- aubio \
- moviepy \
- pyAudioAnalysis \
- pocketsphinx \
- speechrecognition \
- tornado \
- pathlib \
- tflearn \
- keras \
- h5py \
- tensorflow>=1.0.0 \
- google-api-python-client \
- Pillow \
- scikits.talkbox \
- scikits.audiolab \
- git+git://github.com/hipstas/audio-tagging-toolkit.git
+ praat
 
+
+## Installing Python and the SciPy stack
+RUN apt-get update && apt-get install -y \
+python-dev \
+python2.7 \
+python3 \
+python-pip \
+python3-pip \
+python-setuptools \
+python-numpy-dev \
+python-numpy \
+python-yaml \
+ipython \
+ipython-notebook \
+python-numpy-dev \
+python-matplotlib \
+&& python -m pip install -U pip \
+&& python3 -m pip install -U pip
+
+## Installing Python packages
+COPY ./requirements.txt /var/local/
+RUN pip install -qr /var/local/requirements.txt \
+&& pip3 install -qr /var/local/requirements.txt \
+RUN jupyter serverextension enable --py jupyterlab --sys-prefix
+
+## Installing Python2 and Python3 kernels for Jupyter
+RUN python3 -m pip install jupyterhub notebook ipykernel \
+&& python3 -m ipykernel install \
+&& python2 -m pip install ipykernel \
+&& python2 -m ipykernel install
+
+## Not Installing Essentia
 # && git clone https://github.com/MTG/essentia.git \
 # && cd essentia \
 # && ./waf configure --mode=release --build-static --with-python --with-cpptests --with-examples --with-vamp \
@@ -99,10 +91,10 @@ ndg-httpsclient \
 # && cd ../ \
 # && rm -rf essentia
 
-# Install FFmpeg with mp3 support
-RUN add-apt-repository ppa:jonathonf/ffmpeg \
-&& apt-get -y update \
-&& apt-get install -y ffmpeg libav-tools x264 x265
+## Installing FFmpeg
+RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
+&& apt -y update \
+&& apt install -y ffmpeg libav-tools x264 x265
 
 # Omitting Marsyas for now:
 # git clone https://github.com/marsyas/marsyas.git \
