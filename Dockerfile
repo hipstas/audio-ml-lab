@@ -54,41 +54,42 @@ RUN apt-get update && apt-get install -y \
  libsndfile1-dev \
  praat \
  python-setuptools
-# && sudo easy_install -U pip \
-# && pip install -U \
-# setuptools \
-# pyOpenSSL \
-# ndg-httpsclient \
-# pyasn1 \
-# requests \
-# unicodecsv \
-# youtube-dl \
-# six \
-# pydub \
-# numpy \
-# jupyter \
-# pandas \
-# matplotlib \
-# plotly \
-# scipy \
-# sklearn \
-# librosa \
-# aubio \
-# moviepy \
-# pyAudioAnalysis \
-# pocketsphinx \
-# speechrecognition \
-# tornado \
-# pathlib \
-# tflearn \
-# keras \
-# h5py \
-# tensorflow>=1.0.0 \
-# google-api-python-client \
-# Pillow \
-# scikits.talkbox \
-# scikits.audiolab \
-# git+git://github.com/hipstas/audio-tagging-toolkit.git
+&& easy_install -U pip \
+&& pip install -U \
+setuptools \
+nose \
+pyOpenSSL \
+ndg-httpsclient \
+ pyasn1 \
+ requests \
+ unicodecsv \
+ youtube-dl \
+ six \
+ pydub \
+ numpy \
+ jupyter \
+ pandas \
+ matplotlib \
+ plotly \
+ scipy \
+ sklearn \
+ librosa \
+ aubio \
+ moviepy \
+ pyAudioAnalysis \
+ pocketsphinx \
+ speechrecognition \
+ tornado \
+ pathlib \
+ tflearn \
+ keras \
+ h5py \
+ tensorflow>=1.0.0 \
+ google-api-python-client \
+ Pillow \
+ scikits.talkbox \
+ scikits.audiolab \
+ git+git://github.com/hipstas/audio-tagging-toolkit.git
 
 # && git clone https://github.com/MTG/essentia.git \
 # && cd essentia \
