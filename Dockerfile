@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
  wget \
  curl \
  git \
- swig \
+ swig3.0 \
  libgtk-3-dev \
  software-properties-common \
  build-essential \
