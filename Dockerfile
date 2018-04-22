@@ -73,8 +73,8 @@ python-matplotlib \
 COPY ./requirements.txt /var/local/
 RUN pip install -U setuptools \
 && pip3 install -U setuptools \
-&& pip install -qr /var/local/requirements.txt \
-&& pip3 install -qr /var/local/requirements.txt
+&& pip install -qr /var/local/requirements.txt
+#&& pip3 install -qr /var/local/requirements.txt
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 ## Installing Python2 and Python3 kernels for Jupyter
