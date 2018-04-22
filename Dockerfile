@@ -54,7 +54,9 @@ RUN apt-get update && apt-get install -y \
 ## Installing Python and the SciPy stack
 RUN apt-get update && apt-get install -y \
 python-dev \
-python2.7 \
+sudo add-apt-repository ppa:jonathonf/python-2.7 \
+sudo apt-get update \
+sudo apt-get install python2.7 \
 python3 \
 python-pip \
 python3-pip \
@@ -69,18 +71,11 @@ python-matplotlib \
 build-essential checkinstall \
 libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev  libgdbm-dev libc6-dev libbz2-dev \
 && python -m pip install -U pip \
-&& python3 -m pip install -U pip \
-&& wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz \
-&& tar xfz Python-2.7.9.tgz \
-&& cd Python-2.7.9/ \
-&& ./configure --prefix /usr/local/lib/python2.7.9 --enable-ipv6 \
-&& make \
-&& make install
+&& python3 -m pip install -U pip
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
-RUN alias python='/usr/local/lib/python2.7.9/bin/python' \
-&& pip install -U setuptools \
+RUN pip install -U setuptools \
 && pip3 install -U setuptools \
 && pip3 install tornado \
 && pip install -qr /var/local/requirements.txt
