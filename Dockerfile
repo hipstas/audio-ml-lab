@@ -51,24 +51,23 @@ RUN apt-get update && apt-get install -y \
  libsndfile1-dev \
  praat
 
-
 ## Installing Python and the SciPy stack
 #RUN apt-get update && apt-get install -y \
-#python-dev \
-#python2.7 \
-#python3 \
-#python-pip \
-#python3-pip \
-#python-setuptools \
-#python-numpy-dev \
-#python-numpy \
-#python-yaml \
-#ipython \
-#ipython-notebook \
-#python-numpy-dev \
-#python-matplotlib \
-#&& python -m pip install -U pip \
-#&& python3 -m pip install -U pip
+python-dev \
+python2.7 \
+python3 \
+python-pip \
+python3-pip \
+python-setuptools \
+python-numpy-dev \
+python-numpy \
+python-yaml \
+ipython \
+ipython-notebook \
+python-numpy-dev \
+python-matplotlib \
+&& python -m pip install -U pip \
+&& python3 -m pip install -U pip
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
