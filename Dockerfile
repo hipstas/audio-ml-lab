@@ -114,7 +114,7 @@ ENV LC_ALL en_US.UTF-8
 
 # Updating Python2
 RUN apt-get update \
-&& RUN add-apt-repository -y ppa:jonathonf/python-2.7 \
+&& add-apt-repository -y ppa:jonathonf/python-2.7 \
 && apt-get update \
 && apt-get install -y python2.7
 
