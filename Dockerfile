@@ -75,6 +75,7 @@ libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev  libgdbm
 COPY ./requirements.txt /var/local/
 RUN pip install -U setuptools \
 && pip3 install -U setuptools \
+&& pip3 install tornado \
 && pip install -qr /var/local/requirements.txt
 #&& pip3 install -qr /var/local/requirements.txt
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix

@@ -18,9 +18,6 @@ sklearn
 librosa
 aubio
 moviepy
-pocketsphinx
-speechrecognition
-tornado
 pathlib
 tflearn
 keras
