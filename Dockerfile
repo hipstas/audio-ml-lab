@@ -20,12 +20,8 @@ RUN apt-get update && apt-get install -y \
  sox \
  libsox-fmt-mp3 \
  libimage-exiftool-perl \
- python-dev \
  libffi-dev \
  libssl-dev \
- ipython \
- ipython-notebook \
- python-matplotlib \
  libfreetype6-dev \
  libxft-dev \
  libblas-dev \
@@ -71,8 +67,6 @@ libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-
 && python -m pip install -U pip \
 && python3 -m pip install -U pip
 
-#ln -s /usr/local/lib/python2.7.9/bin/easy_install /usr/bin/easy_install
-#ln -s /usr/local/lib/python2.7.9/bin/pip /usr/bin/pip
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
