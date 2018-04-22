@@ -53,9 +53,10 @@ RUN apt-get update && apt-get install -y \
 ## Installing Python and the SciPy stack
 RUN apt-get update && apt-get install -y \
 python-dev \
-sudo add-apt-repository ppa:jonathonf/python-2.7 \
-sudo apt-get update \
-sudo apt-get install python2.7 \
+&& sudo add-apt-repository ppa:jonathonf/python-2.7 \
+&& sudo apt-get update \
+&& sudo apt-get install python2.7 \
+&& apt-get install -y \
 python3 \
 python-pip \
 python3-pip \
