@@ -20,8 +20,13 @@ RUN apt-get update && apt-get install -y \
  sox \
  libsox-fmt-mp3 \
  libimage-exiftool-perl \
+ python2.7 \
+ python-dev \
  libffi-dev \
  libssl-dev \
+ ipython \
+ ipython-notebook \
+ python-matplotlib \
  libfreetype6-dev \
  libxft-dev \
  libblas-dev \
@@ -46,36 +51,28 @@ RUN apt-get update && apt-get install -y \
  libsndfile1-dev \
  praat
 
-
 ## Installing Python and the SciPy stack
-RUN apt-get update \
-&& add-apt-repository -y ppa:jonathonf/python-2.7 \
-&& apt-get update \
-&& apt-get install -y python2.7 \
+RUN apt-get update && apt-get install -y \
 python-dev \
+python2.7 \
 python3 \
 python-pip \
 python3-pip \
 python-setuptools \
 python-numpy-dev \
+python-numpy \
 python-yaml \
 ipython \
 ipython-notebook \
 python-numpy-dev \
 python-matplotlib \
-build-essential checkinstall \
-libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev \
 && python -m pip install -U pip \
 && python3 -m pip install -U pip
 
-
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
-RUN pip install -U setuptools \
-&& pip3 install -U setuptools \
-&& pip3 install tornado \
-&& pip install -qr /var/local/requirements.txt
-#&& pip3 install -qr /var/local/requirements.txt
+#RUN pip install -qr /var/local/requirements.txt \
+#&& pip3 install -qr /var/local/requirements.txt \
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 ## Installing Python2 and Python3 kernels for Jupyter
@@ -114,6 +111,12 @@ RUN apt-get install -y language-pack-en
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
+
+# Updating Python2
+RUN apt-get update \
+&& RUN add-apt-repository -y ppa:jonathonf/python-2.7 \
+&& apt-get update \
+&& apt-get install -y python2.7
 
 # Configure container startup
 ENV SHELL /bin/bash
