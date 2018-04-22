@@ -1,4 +1,3 @@
-'requests[security]'
 setuptools
 nose
 pyOpenSSL
