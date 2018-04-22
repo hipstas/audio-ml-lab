@@ -91,9 +91,9 @@ COPY ./requirements.txt /var/local/
 # && rm -rf essentia
 
 ## Installing FFmpeg
-RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
-&& apt -y update \
-&& apt install -y ffmpeg libav-tools x264 x265
+#RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
+#&& apt -y update \
+#&& apt install -y ffmpeg libav-tools x264 x265
 
 # Omitting Marsyas for now:
 # git clone https://github.com/marsyas/marsyas.git \
