@@ -54,7 +54,7 @@ RUN apt-get update && apt-get install -y \
 
 ## Installing Python and the SciPy stack
 #RUN apt-get update && apt-get install -y \
-python2.7 \
+python \
 python3 \
 python-pip \
 python3-pip \
