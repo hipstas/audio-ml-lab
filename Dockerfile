@@ -66,6 +66,8 @@ ipython \
 ipython-notebook \
 python-numpy-dev \
 python-matplotlib \
+build-essential checkinstall \
+libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev  libgdbm-dev libc6-dev libbz2-dev \
 && python -m pip install -U pip \
 && python3 -m pip install -U pip
 

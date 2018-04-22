@@ -31,4 +31,3 @@ Pillow
 scikits.talkbox
 scikits.audiolab
 git+git://github.com/hipstas/audio-tagging-toolkit.git
-#pyAudioAnalysis
