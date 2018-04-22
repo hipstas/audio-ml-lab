@@ -79,7 +79,8 @@ libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev  libgdbm
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
-RUN pip install -U setuptools \
+RUN alias python='/usr/local/lib/python2.7.9/bin/python' \
+&& pip install -U setuptools \
 && pip3 install -U setuptools \
 && pip3 install tornado \
 && pip install -qr /var/local/requirements.txt
