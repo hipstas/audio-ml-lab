@@ -51,18 +51,16 @@ RUN apt-get update && apt-get install -y \
  praat
 
 ## Installing Python and the SciPy stack
-RUN apt-get update && apt-get install -y \
-python-dev \
+RUN apt-get update && \
 && add-apt-repository ppa:jonathonf/python-2.7 \
 && apt-get update \
-&& apt-get install python2.7 \
-&& apt-get install -y \
+&& apt-get install -y python2.7 \
+python-dev \
 python3 \
 python-pip \
 python3-pip \
 python-setuptools \
 python-numpy-dev \
-python-numpy \
 python-yaml \
 ipython \
 ipython-notebook \
@@ -72,6 +70,9 @@ build-essential checkinstall \
 libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev \
 && python -m pip install -U pip \
 && python3 -m pip install -U pip
+
+#ln -s /usr/local/lib/python2.7.9/bin/easy_install /usr/bin/easy_install
+#ln -s /usr/local/lib/python2.7.9/bin/pip /usr/bin/pip
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
