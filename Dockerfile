@@ -1,5 +1,5 @@
 # Audio ML Notebook
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 MAINTAINER Steve McLaughlin <stephen.mclaughlin@utexas.edu>
 
