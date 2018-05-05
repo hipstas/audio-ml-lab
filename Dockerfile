@@ -69,6 +69,12 @@ python-matplotlib \
 && python -m pip install -U pip \
 && python3 -m pip install -U pip
 
+# Updating Python2
+RUN apt-get update \
+&& add-apt-repository -y ppa:jonathonf/python-2.7 \
+&& apt-get update \
+&& apt-get install -y python2.7
+
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
 RUN pip2 install --ignore-installed -qr /var/local/requirements.txt \
@@ -111,12 +117,6 @@ RUN apt-get install -y language-pack-en
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-
-# Updating Python2
-RUN apt-get update \
-&& add-apt-repository -y ppa:jonathonf/python-2.7 \
-&& apt-get update \
-&& apt-get install -y python2.7
 
 # Configure container startup
 ENV SHELL /bin/bash
