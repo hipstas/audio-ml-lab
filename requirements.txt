@@ -1,13 +1,13 @@
 setuptools
 nose
 pyOpenSSL
+numpy
 ndg-httpsclient
 pyasn1
 requests
 youtube-dl
 six
 pydub
-numpy
 jupyter
 pandas
 matplotlib
