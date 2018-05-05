@@ -23,7 +23,7 @@ h5py
 #tensorflow==1.6
 google-api-python-client
 Pillow
-scikits.talkbox
+#scikits.talkbox
 scikits.audiolab
 bleach==1.5.0
 git+git://github.com/hipstas/audio-tagging-toolkit.git
