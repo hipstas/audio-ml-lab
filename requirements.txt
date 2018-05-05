@@ -4,7 +4,6 @@ pyOpenSSL
 ndg-httpsclient
 pyasn1
 requests
-unicodecsv
 youtube-dl
 six
 pydub
