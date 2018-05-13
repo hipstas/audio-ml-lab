@@ -77,15 +77,17 @@ RUN apt-get update \
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
-RUN pip2 install --ignore-installed -qr /var/local/requirements.txt \
+RUN pip2 install --upgrade pip \
+&& pip install --upgrade pip \
+&& pip2 install --ignore-installed -qr /var/local/requirements.txt \
 && pip3 install --ignore-installed -qr /var/local/requirements.txt 
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 ## Installing Python2 and Python3 kernels for Jupyter
-#RUN python3 -m pip install jupyterhub notebook ipykernel \
-#&& python3 -m ipykernel install \
-#&& python2 -m pip install ipykernel \
-#&& python2 -m ipykernel install
+RUN python3 -m pip install jupyterhub notebook ipykernel \
+&& python3 -m ipykernel install \
+&& python2 -m pip install ipykernel \
+&& python2 -m ipykernel install
 
 ## Not Installing Essentia
 # && git clone https://github.com/MTG/essentia.git \
