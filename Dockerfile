@@ -77,7 +77,8 @@ RUN apt-get update \
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
-RUN pip2 install --upgrade pip \
+RUN ulimit -s 16384 \
+&& pip2 install --upgrade pip \
 && pip install --upgrade pip \
 && pip2 install --ignore-installed -qr /var/local/requirements.txt \
 && pip3 install --ignore-installed -qr /var/local/requirements.txt 
