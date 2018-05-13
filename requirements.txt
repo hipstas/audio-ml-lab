@@ -24,7 +24,7 @@ h5py
 google-api-python-client
 Pillow
 #scikits.talkbox
-scikits.audiolab
+#scikits.audiolab
 bleach==1.5.0
 git+git://github.com/hipstas/audio-tagging-toolkit.git
 numpy
