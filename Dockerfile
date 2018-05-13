@@ -57,7 +57,6 @@ python-dev \
 python2.7 \
 python3 \
 python-pip \
-python3-pip \
 python-setuptools \
 python-numpy-dev \
 python-numpy \
@@ -69,26 +68,27 @@ python-matplotlib \
 && python -m pip install -U pip \
 && python3 -m pip install -U pip
 
-# Updating Python2
+## Installing Python packages
+COPY ./requirements.txt /var/local/
 RUN apt-get update \
 && add-apt-repository -y ppa:jonathonf/python-2.7 \
 && apt-get update \
-&& apt-get install -y python2.7
-
-## Installing Python packages
-COPY ./requirements.txt /var/local/
-RUN ulimit -s 16384 \
+&& apt-get install -y python2.7 \
 && pip2 install --upgrade pip \
-&& pip install --upgrade pip \
+&& pip2 install bleach==1.5.0 \
+&& pip2 install tqdm==4.11.2 \
+&& pip2 install decorator==4.0.11 \
 && pip2 install --ignore-installed -qr /var/local/requirements.txt \
-&& pip3 install --ignore-installed -qr /var/local/requirements.txt 
+&& apt install python3-pip \
+&& pip3 install --upgrade pip \
+&& pip3 install --ignore-installed -qr /var/local/requirements.txt
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 ## Installing Python2 and Python3 kernels for Jupyter
-RUN python3 -m pip install jupyterhub notebook ipykernel \
-&& python3 -m ipykernel install \
-&& python2 -m pip install ipykernel \
-&& python2 -m ipykernel install
+#RUN python3 -m pip install jupyterhub notebook ipykernel \
+#&& python3 -m ipykernel install \
+#&& python2 -m pip install ipykernel \
+#&& python2 -m ipykernel install
 
 ## Not Installing Essentia
 # && git clone https://github.com/MTG/essentia.git \
