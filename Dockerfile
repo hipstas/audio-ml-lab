@@ -69,10 +69,16 @@ python-matplotlib \
 && python -m pip install -U pip \
 && python3 -m pip install -U pip
 
+# Updating Python2
+RUN apt-get update \
+&& add-apt-repository -y ppa:jonathonf/python-2.7 \
+&& apt-get update \
+&& apt-get install -y python2.7
+
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
-#RUN pip2 install --ignore-installed -qr /var/local/requirements.txt \
-#&& pip3 install --ignore-installed -qr /var/local/requirements.txt 
+RUN pip2 install --ignore-installed -qr /var/local/requirements.txt \
+&& pip3 install --ignore-installed -qr /var/local/requirements.txt 
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 ## Installing Python2 and Python3 kernels for Jupyter
@@ -105,12 +111,6 @@ COPY ./requirements.txt /var/local/
 # && make install \
 # && cd /sharedfolder \
 # && rm -rf marsyas
-
-# Updating Python2
-RUN apt-get update \
-&& add-apt-repository -y ppa:jonathonf/python-2.7 \
-&& apt-get update \
-&& apt-get install -y python2.7
 
 ## Setting UTF-8 as default encoding format for terminal
 RUN apt-get install -y language-pack-en
