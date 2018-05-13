@@ -79,7 +79,8 @@ RUN apt-get update \
 && pip2 install tqdm==4.11.2 \
 && pip2 install decorator==4.0.11 \
 && pip2 install --ignore-installed -qr /var/local/requirements.txt \
-&& apt install python3-pip \
+&& apt-get install python3-pip \
+&& apt-get install libjpeg-dev \
 && pip3 install --upgrade pip \
 && pip3 install --upgrade setuptools \
 && pip3 install --ignore-installed -qr /var/local/requirements.txt
