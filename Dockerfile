@@ -81,6 +81,7 @@ RUN apt-get update \
 && pip2 install --ignore-installed -qr /var/local/requirements.txt \
 && apt install python3-pip \
 && pip3 install --upgrade pip \
+&& pip3 install --upgrade setuptools \
 && pip3 install --ignore-installed -qr /var/local/requirements.txt
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
