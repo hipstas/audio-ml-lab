@@ -64,9 +64,7 @@ python-yaml \
 ipython \
 ipython-notebook \
 python-numpy-dev \
-python-matplotlib \
-&& python -m pip install -U pip \
-&& python3 -m pip install -U pip
+python-matplotlib
 
 ## Installing Python packages
 COPY ./requirements.txt /var/local/
@@ -74,6 +72,7 @@ RUN apt-get update \
 && add-apt-repository -y ppa:jonathonf/python-2.7 \
 && apt-get update \
 && apt-get install -y python2.7 \
+&& apt-get install python-pip \
 && pip2 install --upgrade pip \
 && pip2 install bleach==1.5.0 \
 && pip2 install tqdm==4.11.2 \
