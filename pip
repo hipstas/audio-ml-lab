@@ -1,3 +1,9 @@
+#!/usr/bin/python
 from pip import __main__
+import sys
+
 if __name__ == '__main__':
     sys.exit(__main__._main())
+
+
+
