@@ -83,7 +83,9 @@ RUN apt-get update \
 && pip3 install --upgrade pip \
 && pip3 install --upgrade setuptools \
 && pip3 install --upgrade h5py \
-&& pip3 install --ignore-installed -qr /var/local/requirements.txt
+&& pip3 install --ignore-installed -qr /var/local/requirements.txt \
+&& pip install git+git://github.com/hipstas/audio-tagging-toolkit \
+&& pip3 install git+git://github.com/hipstas/audio-tagging-toolkit
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 ## Installing Python2 and Python3 kernels for Jupyter
