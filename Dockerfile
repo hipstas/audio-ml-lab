@@ -72,15 +72,14 @@ RUN apt-get update \
 && add-apt-repository -y ppa:jonathonf/python-2.7 \
 && apt-get update \
 && apt-get install -y python2.7 \
-&& apt-get install python-pip \
+&& apt-get install -y python-pip \
 && pip install --upgrade pip \
 && pip2 install --upgrade pip \
 && pip2 install bleach==1.5.0 \
 && pip2 install tqdm==4.11.2 \
 && pip2 install decorator==4.0.11 \
 && pip2 install --ignore-installed -qr /var/local/requirements.txt \
-&& apt-get install python3-pip \
-&& apt-get install libjpeg-dev \
+&& apt-get install -y python3-pip libjpeg-dev \
 && pip3 install --upgrade pip \
 && pip3 install --upgrade setuptools \
 && pip3 install --upgrade h5py \
