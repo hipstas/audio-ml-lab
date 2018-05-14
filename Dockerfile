@@ -79,7 +79,8 @@ RUN apt-get update \
 && pip2 install tqdm==4.11.2 \
 && pip2 install decorator==4.0.11 \
 && pip2 install --ignore-installed -qr /var/local/requirements.txt \
-&& apt-get install -y python3-pip libjpeg-dev \
+&& apt-get install -y libjpeg-dev \
+&& apt-get install -y python3-pip 
 && pip3 install --upgrade pip \
 && pip3 install --upgrade setuptools \
 && pip3 install --upgrade h5py \
