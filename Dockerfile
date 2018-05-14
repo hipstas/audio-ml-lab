@@ -93,18 +93,18 @@ RUN python3 -m pip install jupyterhub notebook ipykernel \
 && python2 -m ipykernel install
 
 ## Not Installing Essentia
-# && git clone https://github.com/MTG/essentia.git \
-# && cd essentia \
-# && ./waf configure --mode=release --build-static --with-python --with-cpptests --with-examples --with-vamp \
-# && ./waf \
-# && ./waf install \
-# && cd ../ \
-# && rm -rf essentia
+#RUN git clone https://github.com/MTG/essentia.git \
+#&& cd essentia \
+#&& ./waf configure --mode=release --build-static --with-python --with-cpptests --with-examples --with-vamp \
+#&& ./waf \
+#&& ./waf install \
+#&& cd ../ \
+#&& rm -rf essentia
 
 ## Installing FFmpeg
-#RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
-#&& apt -y update \
-#&& apt install -y ffmpeg libav-tools x264 x265
+RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
+&& apt-get -y update \
+&& apt-get install -y ffmpeg libav-tools x264 x265
 
 # Omitting Marsyas for now:
 # git clone https://github.com/marsyas/marsyas.git \
