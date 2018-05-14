@@ -73,9 +73,7 @@ RUN apt-get update \
 && apt-get update \
 && apt-get install -y python2.7 \
 && apt-get install -y python-pip \
-&& echo '''from pip import __main__
-if __name__ == '__main__':
-    sys.exit(__main__._main())''' > /usr/bin/pip \
+&& cd /bin/ && wget -N https://raw.githubusercontent.com/hipstas/audio-ml-lab/master/pip \
 && pip install --upgrade pip \
 && pip2 install --upgrade pip \
 && pip2 install bleach==1.5.0 \
