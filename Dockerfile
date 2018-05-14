@@ -82,6 +82,7 @@ RUN apt-get update \
 && pip2 install --ignore-installed -qr /var/local/requirements.txt \
 && apt-get install -y libjpeg-dev \
 && apt-get install -y python3-pip \
+&& cd /usr/local/bin/ && wget -N https://raw.githubusercontent.com/hipstas/audio-ml-lab/master/pip3 \
 && pip3 install --upgrade pip \
 && pip3 install --upgrade setuptools \
 && pip3 install --upgrade h5py \
