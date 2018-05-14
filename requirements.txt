@@ -20,7 +20,7 @@ pathlib
 tflearn
 keras
 h5py
-#tensorflow==1.6
+tensorflow
 google-api-python-client
 Pillow
 #scikits.talkbox
