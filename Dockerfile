@@ -73,6 +73,7 @@ RUN apt-get update \
 && apt-get update \
 && apt-get install -y python2.7 \
 && apt-get install python-pip \
+&& pip install --upgrade pip \
 && pip2 install --upgrade pip \
 && pip2 install bleach==1.5.0 \
 && pip2 install tqdm==4.11.2 \
