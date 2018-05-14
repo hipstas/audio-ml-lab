@@ -83,6 +83,7 @@ RUN apt-get update \
 && apt-get install libjpeg-dev \
 && pip3 install --upgrade pip \
 && pip3 install --upgrade setuptools \
+&& pip3 install --upgrade h5py \
 && pip3 install --ignore-installed -qr /var/local/requirements.txt
 #RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
